@@ -1,91 +1,66 @@
- body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #ff9aa2, #ffd1dc);
+ /* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup {
+  background: #8b3a4e;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 20px;
   text-align: center;
-  overflow: hidden;
-  color: #5a0f2e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;   /* 🔥 KEY FIX */
 }
 
-/* Common */
-.container, .proposal-container {
-  padding: 80px 20px;
-}
-
-.message, .proposal-text {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: 20px auto;
+/* Text spacing */
+.popup h1,
+.popup h2,
+.popup p {
+  margin: 0;
   line-height: 1.6;
 }
 
-/* Buttons */
-.buttons {
-  margin-top: 30px;
+.name {
+  font-size: 1.4em;
 }
 
-.yes, .no {
-  padding: 12px 32px;
-  font-size: 1.1em;
-  border-radius: 30px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 10px;
-}
-
-.yes {
-  background: #ff3366;
-  color: white;
-}
-
-.no {
-  background: #f2f2f2;
+.yes-text {
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 /* Ring */
 .ring {
-  font-size: 70px;
-  margin: 25px 0;
+  font-size: 60px;
+  animation: ringOpen 2s ease;
 }
 
-.pulse {
-  animation: pulse 2s infinite;
+@keyframes ringOpen {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
-.open {
-  animation: openRing 2.5s ease forwards;
-}
-
-@keyframes pulse {
-  50% { transform: scale(1.2); }
-}
-
-@keyframes openRing {
-  0% { transform: scale(0); }
-  60% { transform: scale(1.4); }
-  100% { transform: scale(1); }
-}
-
-/* Name animation */
-.name-animate {
-  font-size: 2.5em;
-  animation: fadeIn 2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; }
-}
-
-/* Firecrackers */
-.fire {
-  position: absolute;
-  font-size: 20px;
-  animation: firework 1.8s ease-out forwards;
-}
-
-@keyframes firework {
-  from { transform: scale(0); opacity: 1; }
-  to { transform: scale(2); opacity: 0; }
+/* Button */
+.close-btn {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
 }
