@@ -1,55 +1,35 @@
  body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #ff8fa3, #ffc3d1);
+  background: linear-gradient(135deg, #ff9aa2, #ffd1dc);
   text-align: center;
   overflow: hidden;
   color: #5a0f2e;
 }
 
-.container {
-  padding: 70px 20px;
+/* Common */
+.container, .proposal-container {
+  padding: 80px 20px;
 }
 
-h1 {
-  font-size: 2.2em;
-}
-
-h2 {
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.message {
+.message, .proposal-text {
   font-size: 1.2em;
   max-width: 600px;
-  margin: 0 auto 20px;
+  margin: 20px auto;
   line-height: 1.6;
-}
-
-/* Ring */
-.ring {
-  font-size: 60px;
-  margin: 20px 0;
-  animation: ringPulse 2s infinite;
-}
-
-@keyframes ringPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
 }
 
 /* Buttons */
 .buttons {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
-button {
-  padding: 12px 30px;
+.yes, .no {
+  padding: 12px 32px;
   font-size: 1.1em;
-  border: none;
   border-radius: 30px;
+  border: none;
+  text-decoration: none;
   cursor: pointer;
   margin: 10px;
 }
@@ -63,42 +43,49 @@ button {
   background: #f2f2f2;
 }
 
-/* Hearts */
-.heart {
-  position: absolute;
-  font-size: 18px;
-  animation: float 6s linear infinite;
+/* Ring */
+.ring {
+  font-size: 70px;
+  margin: 25px 0;
 }
 
-@keyframes float {
-  from { transform: translateY(100vh); opacity: 1; }
-  to { transform: translateY(-10vh); opacity: 0; }
+.pulse {
+  animation: pulse 2s infinite;
 }
 
-/* Fireworks */
+.open {
+  animation: openRing 2.5s ease forwards;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}
+
+@keyframes openRing {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* Name animation */
+.name-animate {
+  font-size: 2.5em;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; }
+}
+
+/* Firecrackers */
 .fire {
   position: absolute;
-  font-size: 22px;
-  animation: explode 1.5s ease-out forwards;
+  font-size: 20px;
+  animation: firework 1.8s ease-out forwards;
 }
 
-@keyframes explode {
-  0% { transform: scale(0); opacity: 1; }
-  100% { transform: scale(2); opacity: 0; }
-}
-
-/* Celebration Popup */
-#celebration {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-.celebrate-box {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  width: 300px;
-  margin: 180px auto;
+@keyframes firework {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(2); opacity: 0; }
 }
