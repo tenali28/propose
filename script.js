@@ -1,8 +1,8 @@
  // Typing Effect
 const text =
 "Dear Kanna (Arun), ❤️\n" +
-"Every moment with you feels special.\n" +
-"My heart chose you long ago.\n";
+"Loving you has been the easiest and most beautiful part of my life.\n" +
+"With you, everything feels right.";
 
 let i = 0;
 const typing = document.getElementById("typing");
@@ -25,7 +25,7 @@ setInterval(() => {
   document.body.appendChild(heart);
 
   setTimeout(() => heart.remove(), 6000);
-}, 400);
+}, 500);
 
 // NO Button Movement
 function moveNo() {
@@ -39,7 +39,7 @@ function moveNo() {
 function celebrate() {
   document.getElementById("celebration").style.display = "block";
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 25; i++) {
     const fire = document.createElement("div");
     fire.className = "fire";
     fire.innerHTML = "🎆";
