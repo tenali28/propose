@@ -1,11 +1,16 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Propose Day ❤️</title>
+  <title>Propose Day 💍</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <nav>
   <a href="index.html">Home</a>
@@ -14,16 +19,29 @@
 </nav>
 
 <div class="container">
-  <h1>💍 Happy Propose Day, Kanna (Arun) 💍</h1>
-  <p class="subtitle">From my heart to yours ❤️</p>
+  <h1>💍 Happy Propose Day 💍</h1>
 
   <p class="message">
-    Every moment with you feels special.  
-    Every smile of yours feels like home.
+    You are my today, my tomorrow, and my forever ❤️
   </p>
 
   <h2>Will you be mine forever? 💖</h2>
+
+  <div class="buttons">
+    <button class="yes" onclick="showPopup()">YES 💕</button>
+    <button class="no" onclick="moveNo()">NO 🙈</button>
+  </div>
 </div>
 
+<!-- Proposal Popup -->
+<div id="popup">
+  <div class="popup-content">
+    <h1>🌹 SHE SAID YES 🌹</h1>
+    <p>You just made me the happiest person alive 💖</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
