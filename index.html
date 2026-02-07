@@ -1,72 +1,36 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💍 Happy Propose Day, Kanna (Arun) 💍</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Propose Day 💍</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="bgMusic" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
 
-    <!-- Floating Hearts Container -->
-    <div id="heartsContainer"></div>
+<div class="container">
+  <h1>💍 Happy Propose Day 💍</h1>
+  <h2>Kanna (Arun) ❤️</h2>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <h1 class="title">💍 Happy Propose Day, Kanna (Arun) 💍</h1>
-            <p class="subtitle">A special moment for a special person...</p>
-        </header>
+  <p class="message" id="typing"></p>
 
-        <!-- Photo Slideshow -->
-        <div class="slideshow-container">
-            <div class="slide fade">
-                <img src="photo1.jpg" alt="Memory 1">
-            </div>
-            <div class="slide fade">
-                <img src="photo2.jpg" alt="Memory 2">
-            </div>
-            <div class="slide fade">
-                <img src="photo3.jpg" alt="Memory 3">
-            </div>
-        </div>
+  <!-- Ring Animation -->
+  <div class="ring">💍</div>
 
-        <!-- Love Letter with Typing Animation -->
-        <section class="love-letter">
-            <div class="letter-content">
-                <p class="letter-greeting">Dear Kanna (Arun),</p>
-                <p class="typing-text" id="typingText"></p>
-            </div>
-        </section>
+  <h3>Will you be mine forever? 💖</h3>
 
-        <!-- Proposal Buttons -->
-        <section class="proposal-buttons">
-            <button class="btn btn-yes" id="yesBtn">💚 YES, I do! 💚</button>
-            <button class="btn btn-no" id="noBtn">❌ NO, Thank you ❌</button>
-        </section>
-    </div>
+  <div class="buttons">
+    <button class="yes" onclick="celebrate()">YES 💕</button>
+    <button class="no" onclick="moveNo()">NO 🙈</button>
+  </div>
+</div>
 
-    <!-- Popup Modal -->
-    <div id="successModal" class="modal hidden">
-        <div class="modal-content">
-            <button class="close-btn" id="closeBtn">&times;</button>
-            <div class="modal-body">
-                <h2>🌹 SHE SAID YES 🌹</h2>
-                <p>You made me the happiest person alive ❤️</p>
-                <div class="celebration-hearts">
-                    <span class="heart-celebration">❤️</span>
-                    <span class="heart-celebration">❤️</span>
-                    <span class="heart-celebration">❤️</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Celebration -->
+<div id="celebration">
+  <h1>🎆 SHE SAID YES 🎆</h1>
+  <p>You just made my world complete ❤️</p>
+  <button onclick="closeCelebration()">Close</button>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
