@@ -1,47 +1,72 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Propose Day 💍</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💍 Happy Propose Day, Kanna (Arun) 💍</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+    <!-- Floating Hearts Container -->
+    <div id="heartsContainer"></div>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
-  <a href="promise.html">My Promise</a>
-</nav>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">💍 Happy Propose Day, Kanna (Arun) 💍</h1>
+            <p class="subtitle">A special moment for a special person...</p>
+        </header>
 
-<div class="container">
-  <h1>💍 Happy Propose Day 💍</h1>
+        <!-- Photo Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="photo1.jpg" alt="Memory 1">
+            </div>
+            <div class="slide fade">
+                <img src="photo2.jpg" alt="Memory 2">
+            </div>
+            <div class="slide fade">
+                <img src="photo3.jpg" alt="Memory 3">
+            </div>
+        </div>
 
-  <p class="message">
-    You are my today, my tomorrow, and my forever ❤️
-  </p>
+        <!-- Love Letter with Typing Animation -->
+        <section class="love-letter">
+            <div class="letter-content">
+                <p class="letter-greeting">Dear Kanna (Arun),</p>
+                <p class="typing-text" id="typingText"></p>
+            </div>
+        </section>
 
-  <h2>Will you be mine forever? 💖</h2>
+        <!-- Proposal Buttons -->
+        <section class="proposal-buttons">
+            <button class="btn btn-yes" id="yesBtn">💚 YES, I do! 💚</button>
+            <button class="btn btn-no" id="noBtn">❌ NO, Thank you ❌</button>
+        </section>
+    </div>
 
-  <div class="buttons">
-    <button class="yes" onclick="showPopup()">YES 💕</button>
-    <button class="no" onclick="moveNo()">NO 🙈</button>
-  </div>
-</div>
+    <!-- Popup Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <div class="modal-body">
+                <h2>🌹 SHE SAID YES 🌹</h2>
+                <p>You made me the happiest person alive ❤️</p>
+                <div class="celebration-hearts">
+                    <span class="heart-celebration">❤️</span>
+                    <span class="heart-celebration">❤️</span>
+                    <span class="heart-celebration">❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Proposal Popup -->
-<div id="popup">
-  <div class="popup-content">
-    <h1>🌹 SHE SAID YES 🌹</h1>
-    <p>You just made me the happiest person alive 💖</p>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
