@@ -1,33 +1,4 @@
- // Typing Effect
-const text =
-"Dear Kanna (Arun), ❤️\n" +
-"Loving you has been the easiest and most beautiful part of my life.\n" +
-"With you, everything feels right.";
-
-let i = 0;
-const typing = document.getElementById("typing");
-
-function typeText() {
-  if (i < text.length) {
-    typing.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
-    i++;
-    setTimeout(typeText, 70);
-  }
-}
-typeText();
-
-// Floating Hearts
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 6000);
-}, 500);
-
-// NO Button Movement
+ // NO button movement
 function moveNo() {
   const btn = document.querySelector(".no");
   btn.style.position = "absolute";
@@ -35,22 +6,18 @@ function moveNo() {
   btn.style.top = Math.random() * 80 + "vh";
 }
 
-// YES Celebration
-function celebrate() {
-  document.getElementById("celebration").style.display = "block";
+// Firecrackers on proposal page
+if (window.location.pathname.includes("proposal.html")) {
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const fire = document.createElement("div");
+      fire.className = "fire";
+      fire.innerHTML = "🎆";
+      fire.style.left = Math.random() * 100 + "vw";
+      fire.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(fire);
 
-  for (let i = 0; i < 25; i++) {
-    const fire = document.createElement("div");
-    fire.className = "fire";
-    fire.innerHTML = "🎆";
-    fire.style.left = Math.random() * 100 + "vw";
-    fire.style.top = Math.random() * 100 + "vh";
-    document.body.appendChild(fire);
-
-    setTimeout(() => fire.remove(), 1500);
+      setTimeout(() => fire.remove(), 1800);
+    }, i * 120);
   }
-}
-
-function closeCelebration() {
-  document.getElementById("celebration").style.display = "none";
 }
