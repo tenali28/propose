@@ -1,82 +1,400 @@
- body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
-  text-align: center;
-  overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav {
-  background: rgba(255,255,255,0.3);
-  padding: 15px;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #7a1f1f;
-  font-weight: bold;
+body {
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0ec 50%, #ffb3d9 100%);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }
 
+/* Floating Hearts */
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 2rem;
+    animation: float-up 3s ease-in-out forwards;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container */
 .container {
-  padding: 60px 20px;
+    width: 90%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+    position: relative;
+    z-index: 10;
 }
 
-.message {
-  font-size: 1.3em;
-  margin: 20px auto;
-  max-width: 600px;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.buttons {
-  margin-top: 30px;
+/* Header */
+.header {
+    margin-bottom: 40px;
 }
 
-button {
-  font-size: 1.2em;
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+title {
+    font-size: 2.5rem;
+    color: #d1005c;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: heartbeat 1s ease-in-out infinite;
 }
 
-.yes {
-  background: #ff4d6d;
-  color: white;
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
-.no {
-  background: #ddd;
+.subtitle {
+    font-size: 1.2rem;
+    color: #c2185b;
+    font-style: italic;
 }
 
-/* Popup */
-#popup {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
 }
 
-.popup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  margin: 150px auto;
-  width: 300px;
+.slide {
+    display: none;
+    width: 100%;
 }
 
-/* Animated Hearts */
-.heart {
-  position: absolute;
-  color: #ff4d6d;
-  font-size: 20px;
-  animation: float 6s linear infinite;
+.slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-@keyframes float {
-  0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0; }
+.slide.active {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Love Letter */
+.love-letter {
+    background: linear-gradient(135deg, #fff5f9 0%, #fffaf0 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    border-left: 4px solid #ff69b4;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.letter-content {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.letter-greeting {
+    font-size: 1.2rem;
+    color: #d1005c;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+typing-text {
+    min-height: 120px;
+    color: #555;
+}
+
+typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Proposal Buttons */
+.proposal-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+}
+
+.btn-yes:active {
+    transform: translateY(-1px);
+}
+
+.btn-no {
+    background: linear-gradient(135deg, #d1005c 0%, #a00046 100%);
+    color: white;
+    position: relative;
+}
+
+.btn-no:hover {
+    left: 20px;
+    top: -20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(255, 20, 147, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-body h2 {
+    color: #d1005c;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.celebration-hearts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3rem;
+}
+
+.heart-celebration {
+    display: inline-block;
+    animation: bounce 0.6s ease-in-out infinite;
+}
+
+.heart-celebration:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.heart-celebration:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .proposal-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .btn-no:hover {
+        left: 0;
+        top: -15px;
+    }
+
+    .letter-content {
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .celebration-hearts {
+        gap: 15px;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .love-letter {
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
 }
